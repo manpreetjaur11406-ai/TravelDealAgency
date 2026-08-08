@@ -1,0 +1,108 @@
+.hero {
+  min-height: 620px;
+
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.hero-overlay {
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px 8%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.hero-content {
+  max-width: 650px;
+  color: white;
+}
+
+.hero-small-text {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.08;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+.hero-description {
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.explore-btn,
+.learn-btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.explore-btn {
+  border: none;
+  background: #f28c28;
+  color: white;
+}
+
+.explore-btn:hover {
+  background: white;
+  color: #123b5d;
+  transform: translateY(-3px);
+}
+
+.learn-btn {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.learn-btn:hover {
+  background: white;
+  color: #123b5d;
+  transform: translateY(-3px);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 45px;
+  }
+
+  .hero-overlay {
+    padding: 50px 25px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 180px;
+  }
+}

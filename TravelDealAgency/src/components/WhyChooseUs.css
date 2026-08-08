@@ -1,0 +1,138 @@
+.why-choose-us {
+  background: #173f63;
+  padding: 55px 7% 70px;
+  color: white;
+  text-align: center;
+}
+
+/* Header */
+
+.why-header {
+  margin-bottom: 55px;
+}
+
+.why-label {
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.why-header h2 {
+  font-size: 44px;
+  margin: 0 0 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.why-header span {
+  display: block;
+  font-size: 20px;
+  color: #e5edf5;
+}
+
+/* Feature cards */
+
+.features-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  background: #315a7c;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  padding: 38px 35px;
+  min-height: 285px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Icons */
+
+.feature-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+}
+
+.feature-icon svg {
+  font-size: 38px;
+  color: #173f63;
+}
+
+/* Card heading */
+
+.feature-card h3 {
+  color: #ffffff;
+  font-size: 26px;
+  margin: 0 0 15px;
+  font-weight: 700;
+}
+
+/* Card description */
+
+.feature-card p {
+  color: #e5edf5;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 360px;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .features-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-header h2 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .why-choose-us {
+    padding: 45px 20px 55px;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+
+  .why-header h2 {
+    font-size: 30px;
+  }
+
+  .why-header span {
+    font-size: 16px;
+  }
+
+  .feature-card {
+    min-height: 250px;
+  }
+}
