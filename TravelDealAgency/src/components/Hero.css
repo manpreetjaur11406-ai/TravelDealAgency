@@ -90,19 +90,126 @@
   transform: translateY(-3px);
 }
 
-/* Mobile */
 
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 45px;
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: 600px;
   }
 
   .hero-overlay {
-    padding: 50px 25px;
+    min-height: 600px;
+    padding: 50px 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 700px;
+
+    background-position: center center;
+  }
+
+  .hero-overlay {
+    min-height: 700px;
+
+    display: flex;
+    align-items: flex-start;
+
+    padding: 110px 25px 50px;
+
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.68),
+      rgba(0, 0, 0, 0.82)
+    );
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-small-text {
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    margin-bottom: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
   }
 
   .hero-buttons {
+    display: flex;
     flex-direction: column;
-    width: 180px;
+    gap: 14px;
+    width: 100%;
+    max-width: 315px;
+  }
+
+  .explore-btn,
+  .learn-btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-overlay {
+    min-height: 680px;
+    padding: 90px 20px 40px;
+  }
+
+  .hero-small-text {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    max-width: 100%;
   }
 }

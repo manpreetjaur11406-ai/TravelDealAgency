@@ -18,7 +18,9 @@
   gap: 30px;
 }
 
-/* Logo */
+/* =========================
+   LOGO
+========================= */
 
 .navbar-logo {
   color: #ffffff;
@@ -28,7 +30,9 @@
   white-space: nowrap;
 }
 
-/* Links */
+/* =========================
+   NAV LINKS
+========================= */
 
 .nav-links {
   display: flex;
@@ -62,6 +66,10 @@
   color: #ffffff;
 }
 
+/* =========================
+   CONTACT BUTTON
+========================= */
+
 .contact-nav-link {
   background: #ffffff !important;
   color: #173f63 !important;
@@ -72,41 +80,82 @@
   background: #f1f5f8 !important;
 }
 
-/* Tablet */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
   .navbar-container {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    padding: 14px 25px;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 4px;
   }
 }
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
+
   .navbar-container {
-    padding: 14px 20px;
+    padding: 12px 10px;
+    gap: 8px;
   }
 
+  /* Logo */
   .navbar-logo {
     font-size: 21px;
   }
 
+  /* Navigation */
   .nav-links {
-    gap: 4px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
   }
 
   .nav-links a {
-    padding: 8px 9px;
+    padding: 7px 8px;
     font-size: 13px;
+    gap: 4px;
   }
 
+  /* Hide icons on small screens */
   .nav-links a svg {
     display: none;
+  }
+
+  /* Contact */
+  .contact-nav-link {
+    margin-left: 0;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .navbar-container {
+    padding: 10px 6px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .nav-links a {
+    padding: 6px 7px;
+    font-size: 12px;
   }
 }
