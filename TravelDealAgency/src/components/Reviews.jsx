@@ -1,5 +1,10 @@
 import "./Reviews.css";
-import { FaStar, FaQuoteLeft } from "react-icons/fa";
+import {
+  FaStar,
+  FaQuoteLeft,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 
 function Reviews() {
   const reviews = [
@@ -26,46 +31,113 @@ function Reviews() {
     },
   ];
 
+  const scroll = (direction) => {
+    const container =
+      document.querySelector(".reviews-container");
+
+    if (container) {
+      container.scrollBy({
+        left: direction === "left" ? -450 : 450,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section className="reviews-section" id="reviews">
+    <section className="reviews-section">
+
       <div className="reviews-header">
-        <p className="reviews-label">TRAVELER REVIEWS</p>
+
+        <p className="reviews-label">
+          TRAVELER REVIEWS
+        </p>
 
         <h2>What Our Travelers Say</h2>
 
         <p className="reviews-subtitle">
-          Real experiences from travelers who booked their journey with us.
+          Real experiences from travelers who booked
+          their journey with us.
         </p>
+
       </div>
 
-      <div className="reviews-container">
-        {reviews.map((review) => (
-          <div className="review-card" key={review.name}>
-            <div className="quote-icon">
-              <FaQuoteLeft />
-            </div>
 
-            <div className="review-stars">
-              {Array.from({ length: review.rating }).map((_, index) => (
-                <FaStar key={index} />
-              ))}
-            </div>
+      <div className="reviews-carousel-wrapper">
 
-            <p className="review-text">"{review.review}"</p>
+        <button
+          className="review-arrow left"
+          onClick={() => scroll("left")}
+        >
+          <FaChevronLeft />
+        </button>
 
-            <div className="review-user">
-              <div className="user-avatar">
-                {review.name.charAt(0)}
+
+        <div className="reviews-container">
+
+          {reviews.map((review) => (
+
+            <div
+              className="review-card"
+              key={review.name}
+            >
+
+              <div className="quote-icon">
+                <FaQuoteLeft />
               </div>
 
-              <div>
-                <h3>{review.name}</h3>
-                <p>{review.location}</p>
+
+              <div className="review-stars">
+
+                {Array.from({
+                  length: review.rating,
+                }).map((_, index) => (
+                  <FaStar key={index} />
+                ))}
+
               </div>
+
+
+              <p className="review-text">
+                "{review.review}"
+              </p>
+
+
+              <div className="review-user">
+
+                <div className="user-avatar">
+                  {review.name.charAt(0)}
+                </div>
+
+                <div>
+                  <h3>{review.name}</h3>
+                  <p>{review.location}</p>
+                </div>
+
+              </div>
+
             </div>
-          </div>
-        ))}
+
+          ))}
+
+        </div>
+
+
+        <button
+          className="review-arrow right"
+          onClick={() => scroll("right")}
+        >
+          <FaChevronRight />
+        </button>
+
       </div>
+
+
+      <div className="review-dots">
+        <span className="active-dot"></span>
+        <span></span>
+        <span></span>
+      </div>
+
     </section>
   );
 }

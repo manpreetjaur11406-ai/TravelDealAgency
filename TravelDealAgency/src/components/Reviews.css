@@ -1,10 +1,15 @@
 .reviews-section {
   background: #f7f9fc;
+
   padding: 75px 7%;
+
   text-align: center;
 }
 
-/* Header */
+
+/* =========================
+   HEADER
+========================= */
 
 .reviews-header {
   margin-bottom: 50px;
@@ -12,90 +17,144 @@
 
 .reviews-label {
   color: #234f76;
+
   font-size: 15px;
+
   font-weight: 600;
+
   letter-spacing: 3px;
+
   margin: 0 0 12px;
 }
 
 .reviews-header h2 {
   color: #173f63;
+
   font-size: 42px;
+
   margin: 0 0 15px;
+
   font-weight: 700;
 }
 
 .reviews-subtitle {
   color: #68798a;
+
   font-size: 18px;
+
   margin: 0;
 }
 
-/* Reviews */
 
-.reviews-container {
+/* =========================
+   CAROUSEL
+========================= */
+
+.reviews-carousel-wrapper {
+  position: relative;
+
   max-width: 1400px;
+
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  display: flex;
+
+  align-items: center;
 }
 
+.reviews-container {
+  width: 100%;
+
+  display: flex;
+
+  gap: 30px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+
+  padding: 10px 5px 25px;
+}
+
+.reviews-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
 .review-card {
+  flex: 0 0 calc((100% - 60px) / 3);
+
   background: #ffffff;
+
   border-radius: 20px;
+
   padding: 35px 30px;
+
   text-align: left;
 
   border: 1px solid #e3e9ef;
 
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  scroll-snap-align: start;
 
-.review-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
 }
-
-/* Quote */
 
 .quote-icon {
   color: #f28c28;
+
   font-size: 25px;
+
   margin-bottom: 18px;
 }
-
-/* Stars */
 
 .review-stars {
   display: flex;
+
   gap: 5px;
+
   color: #f3aa22;
+
   font-size: 17px;
+
   margin-bottom: 18px;
 }
 
-/* Review text */
-
 .review-text {
   color: #536577;
+
   font-size: 17px;
+
   line-height: 1.7;
+
   margin: 0 0 28px;
+
   min-height: 85px;
 }
 
-/* User */
+
+/* =========================
+   USER
+========================= */
 
 .review-user {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
 
   border-top: 1px solid #e6ebf0;
+
   padding-top: 20px;
 }
 
@@ -106,33 +165,117 @@
   border-radius: 50%;
 
   background: #173f63;
+
   color: #ffffff;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 20px;
+
   font-weight: 700;
 }
 
 .review-user h3 {
   color: #173f63;
+
   font-size: 17px;
+
   margin: 0 0 4px;
 }
 
 .review-user p {
   color: #7a8997;
+
   font-size: 14px;
+
   margin: 0;
 }
 
-/* Tablet */
+
+/* =========================
+   ARROWS
+========================= */
+
+.review-arrow {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: #173f63;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-arrow.left {
+  left: -20px;
+}
+
+.review-arrow.right {
+  right: -20px;
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.review-dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 10px;
+}
+
+.review-dots span {
+  width: 8px;
+  height: 8px;
+
+  background: #cbd5df;
+
+  border-radius: 50%;
+}
+
+.review-dots .active-dot {
+  width: 22px;
+
+  background: #f28c28;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1000px) {
-  .reviews-container {
-    grid-template-columns: repeat(2, 1fr);
+
+  .review-card {
+    flex: 0 0 calc((100% - 30px) / 2);
   }
 
   .reviews-header h2 {
@@ -140,15 +283,15 @@
   }
 }
 
-/* Mobile */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 650px) {
+
   .reviews-section {
     padding: 55px 20px;
-  }
-
-  .reviews-container {
-    grid-template-columns: 1fr;
   }
 
   .reviews-header h2 {
@@ -157,5 +300,23 @@
 
   .reviews-subtitle {
     font-size: 16px;
+  }
+
+  .reviews-container {
+    gap: 18px;
+
+    padding: 10px 0 20px;
+  }
+
+  .review-card {
+    flex: 0 0 100%;
+
+    scroll-snap-align: center;
+
+    padding: 28px 23px;
+  }
+
+  .review-arrow {
+    display: none;
   }
 }

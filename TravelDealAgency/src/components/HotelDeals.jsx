@@ -1,6 +1,6 @@
 import React from "react";
 import "./HotelDeals.css";
-import { FaLocationDot, FaStar } from "react-icons/fa6";
+import { FaLocationDot, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const hotels = [
   {
@@ -30,10 +30,24 @@ const hotels = [
 ];
 
 function HotelDeals() {
+  const scroll = (direction) => {
+    const container = document.querySelector(".hotel-cards");
+
+    if (container) {
+      container.scrollBy({
+        left: direction === "left" ? -400 : 400,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section className="hotel-deals" id="hotels">
+    <section className="hotel-deals">
+
       <div className="hotel-deals-heading">
-        <p className="hotel-small-title">TODAY'S FEATURED STAYS</p>
+        <p className="hotel-small-title">
+          TODAY'S FEATURED STAYS
+        </p>
 
         <h2>Hotel deals released daily</h2>
 
@@ -42,44 +56,88 @@ function HotelDeals() {
         </p>
       </div>
 
-      <div className="hotel-cards">
-        {hotels.map((hotel, index) => (
-          <div className="hotel-card" key={index}>
-            <div className="hotel-image-container">
-              <img src={hotel.image} alt={hotel.name} />
+      <div className="carousel-wrapper">
 
-              <span className="best-deal">BEST DEAL</span>
-            </div>
+        <button
+          className="carousel-arrow left-arrow"
+          onClick={() => scroll("left")}
+        >
+          <FaChevronLeft />
+        </button>
 
-            <div className="hotel-content">
-              <div className="hotel-rating">
-                {Array.from({ length: hotel.rating }).map((_, index) => (
-                  <FaStar key={index} />
-                ))}
+        <div className="hotel-cards">
 
-                <span className="rating-number">
-                  {hotel.rating === 5 ? "4.9" : "4.8"}
+          {hotels.map((hotel, index) => (
+            <div className="hotel-card" key={index}>
+
+              <div className="hotel-image-container">
+                <img
+                  src={hotel.image}
+                  alt={hotel.name}
+                />
+
+                <span className="best-deal">
+                  BEST DEAL
                 </span>
               </div>
 
-              <h3>{hotel.name}</h3>
+              <div className="hotel-content">
 
-              <p className="hotel-location">
-                <FaLocationDot /> {hotel.location}
-              </p>
+                <div className="hotel-rating">
 
-              <div className="hotel-bottom">
-                <div className="hotel-price">
-                  ${hotel.price}
-                  <span>/ night</span>
+                  {Array.from({
+                    length: hotel.rating,
+                  }).map((_, index) => (
+                    <FaStar key={index} />
+                  ))}
+
+                  <span className="rating-number">
+                    {hotel.rating === 5 ? "4.9" : "4.8"}
+                  </span>
+
                 </div>
 
-                <button className="view-deal">View Deal</button>
+                <h3>{hotel.name}</h3>
+
+                <p className="hotel-location">
+                  <FaLocationDot />
+                  {hotel.location}
+                </p>
+
+                <div className="hotel-bottom">
+
+                  <div className="hotel-price">
+                    ₹{hotel.price.toLocaleString("en-IN")}
+                    <span>/ night</span>
+                  </div>
+
+                  <button className="view-deal">
+                    View Deal
+                  </button>
+
+                </div>
+
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+
+        </div>
+
+        <button
+          className="carousel-arrow right-arrow"
+          onClick={() => scroll("right")}
+        >
+          <FaChevronRight />
+        </button>
+
       </div>
+
+      <div className="carousel-dots">
+        <span className="active-dot"></span>
+        <span></span>
+        <span></span>
+      </div>
+
     </section>
   );
 }
