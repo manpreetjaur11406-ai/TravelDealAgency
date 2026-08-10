@@ -1,3 +1,7 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   width: 100%;
   background: #173f63;
@@ -10,11 +14,13 @@
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
+
   padding: 16px 7%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 30px;
 }
 
@@ -23,10 +29,12 @@
 ========================= */
 
 .navbar-logo {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
+
   font-size: 24px;
   font-weight: 700;
+
   white-space: nowrap;
 }
 
@@ -63,16 +71,17 @@
 
 .nav-links a:hover {
   background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  color: white;
 }
 
 /* =========================
-   CONTACT BUTTON
+   CONTACT
 ========================= */
 
 .contact-nav-link {
-  background: #ffffff !important;
+  background: white !important;
   color: #173f63 !important;
+
   margin-left: 5px;
 }
 
@@ -81,22 +90,48 @@
 }
 
 /* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.mobile-menu-btn {
+  display: none;
+
+  border: none;
+  background: transparent;
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
    TABLET
 ========================= */
 
 @media (max-width: 900px) {
+
   .navbar-container {
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px 25px;
+    padding: 15px 25px;
+    gap: 15px;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px;
+    gap: 3px;
+  }
+
+  .nav-links a {
+    padding: 8px 9px;
+    font-size: 13px;
+  }
+
+  .nav-links a svg {
+    font-size: 13px;
   }
 }
+
 
 /* =========================
    MOBILE
@@ -105,40 +140,71 @@
 @media (max-width: 600px) {
 
   .navbar-container {
-    padding: 12px 10px;
-    gap: 8px;
+    padding: 14px 20px;
+    position: relative;
+
+    flex-wrap: wrap;
   }
 
-  /* Logo */
   .navbar-logo {
     font-size: 21px;
   }
 
-  /* Navigation */
-  .nav-links {
-    width: 100%;
+  /* Show hamburger */
+  .mobile-menu-btn {
     display: flex;
-    flex-wrap: wrap;
+
+    align-items: center;
     justify-content: center;
-    gap: 3px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+  }
+
+  /* Hide menu initially */
+  .nav-links {
+    display: none;
+
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 5px;
+
+    padding-top: 10px;
+  }
+
+  /* Show menu when clicked */
+  .nav-links.menu-open {
+    display: flex;
   }
 
   .nav-links a {
-    padding: 7px 8px;
-    font-size: 13px;
-    gap: 4px;
+    width: 100%;
+
+    justify-content: flex-start;
+
+    padding: 11px 14px;
+
+    font-size: 15px;
+
+    border-radius: 8px;
   }
 
-  /* Hide icons on small screens */
   .nav-links a svg {
-    display: none;
+    display: block;
+    font-size: 16px;
   }
 
-  /* Contact */
   .contact-nav-link {
     margin-left: 0;
+    justify-content: flex-start !important;
   }
 }
+
 
 /* =========================
    VERY SMALL PHONES
@@ -147,15 +213,14 @@
 @media (max-width: 380px) {
 
   .navbar-container {
-    padding: 10px 6px;
+    padding: 12px 15px;
   }
 
   .navbar-logo {
-    font-size: 20px;
+    font-size: 19px;
   }
 
-  .nav-links a {
-    padding: 6px 7px;
-    font-size: 12px;
+  .mobile-menu-btn {
+    font-size: 22px;
   }
 }

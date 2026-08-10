@@ -1,3 +1,7 @@
+/* =========================
+   HERO
+========================= */
+
 .hero {
   min-height: 620px;
 
@@ -8,6 +12,11 @@
 
   position: relative;
 }
+
+
+/* =========================
+   OVERLAY
+========================= */
 
 .hero-overlay {
   min-height: 620px;
@@ -25,6 +34,11 @@
   );
 }
 
+
+/* =========================
+   CONTENT
+========================= */
+
 .hero-content {
   max-width: 650px;
   color: white;
@@ -33,23 +47,36 @@
 .hero-small-text {
   font-size: 15px;
   font-weight: 600;
+
   letter-spacing: 3px;
+
   margin-bottom: 20px;
 }
 
 .hero-content h1 {
   font-size: 64px;
+
   line-height: 1.08;
-  margin-bottom: 25px;
+
+  margin: 0 0 25px;
+
   font-weight: 800;
 }
 
 .hero-description {
   max-width: 560px;
+
   font-size: 18px;
+
   line-height: 1.7;
-  margin-bottom: 35px;
+
+  margin: 0 0 35px;
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons {
   display: flex;
@@ -59,15 +86,20 @@
 .explore-btn,
 .learn-btn {
   padding: 14px 28px;
+
   border-radius: 30px;
+
   font-size: 16px;
   font-weight: 600;
+
   cursor: pointer;
+
   transition: 0.3s ease;
 }
 
 .explore-btn {
   border: none;
+
   background: #f28c28;
   color: white;
 }
@@ -75,11 +107,13 @@
 .explore-btn:hover {
   background: white;
   color: #123b5d;
+
   transform: translateY(-3px);
 }
 
 .learn-btn {
   border: 2px solid white;
+
   background: transparent;
   color: white;
 }
@@ -87,6 +121,7 @@
 .learn-btn:hover {
   background: white;
   color: #123b5d;
+
   transform: translateY(-3px);
 }
 
@@ -103,6 +138,7 @@
 
   .hero-overlay {
     min-height: 600px;
+
     padding: 50px 6%;
   }
 
@@ -119,24 +155,42 @@
 @media (max-width: 600px) {
 
   .hero {
-    min-height: 700px;
+    /*
+      Use the available phone height
+      instead of an arbitrary 700px.
+    */
+
+    min-height: calc(100svh - 70px);
+
+    background-size: cover;
+
+    /*
+      Move image slightly toward the center
+      so the road remains visible.
+    */
 
     background-position: center center;
   }
 
   .hero-overlay {
-    min-height: 700px;
+
+    min-height: calc(100svh - 70px);
 
     display: flex;
-    align-items: flex-start;
 
-    padding: 110px 25px 50px;
+    align-items: center;
+
+    padding: 45px 22px;
+
+    /*
+      Stronger overlay behind text
+    */
 
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.68),
-      rgba(0, 0, 0, 0.82)
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.60) 50%,
+      rgba(0, 0, 0, 0.82) 100%
     );
   }
 
@@ -146,36 +200,49 @@
   }
 
   .hero-small-text {
-    font-size: 13px;
-    letter-spacing: 2.5px;
-    margin-bottom: 18px;
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 16px;
+
+    white-space: nowrap;
   }
 
   .hero-content h1 {
-    font-size: 42px;
+    font-size: 39px;
+
     line-height: 1.12;
-    margin-bottom: 22px;
+
+    margin-bottom: 20px;
   }
 
   .hero-description {
     max-width: 100%;
+
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 30px;
+
+    line-height: 1.55;
+
+    margin-bottom: 27px;
   }
 
   .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
     width: 100%;
-    max-width: 315px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
   }
 
   .explore-btn,
   .learn-btn {
     width: 100%;
+
     padding: 15px 20px;
+
     font-size: 16px;
   }
 }
@@ -188,28 +255,26 @@
 @media (max-width: 380px) {
 
   .hero {
-    min-height: 680px;
+    min-height: calc(100svh - 65px);
   }
 
   .hero-overlay {
-    min-height: 680px;
-    padding: 90px 20px 40px;
+    min-height: calc(100svh - 65px);
+
+    padding: 35px 18px;
   }
 
   .hero-small-text {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
   }
 
   .hero-content h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .hero-description {
     font-size: 15px;
-  }
-
-  .hero-buttons {
-    max-width: 100%;
   }
 }

@@ -5,7 +5,10 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-overlay">
         <div className="hero-content">
-          <p className="hero-small-text">✈ EXPLORE • DISCOVER • TRAVEL</p>
+
+          <div className="hero-small-text">
+            ✈ EXPLORE • DISCOVER • TRAVEL
+          </div>
 
           <h1>
             Discover Your
@@ -19,9 +22,15 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <button className="explore-btn">Explore Deals</button>
-            <button className="learn-btn">Learn More</button>
+            <button className="explore-btn">
+              Explore Deals
+            </button>
+
+            <button className="learn-btn">
+              Learn More
+            </button>
           </div>
+
         </div>
       </div>
     </section>
